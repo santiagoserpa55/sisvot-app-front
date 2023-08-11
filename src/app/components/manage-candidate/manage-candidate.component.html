@@ -1,0 +1,99 @@
+<div>
+  <h2>{{ operation === 'update' ? 'Actualizar candidato' : 'Nuevo candidato' }}</h2>
+  <div class="field">
+    <label for="cedula">Cedula</label>
+    <input
+      [(ngModel)]="candidate.cedula"
+      id="cedula"
+      pInputText
+      placeholder="00000000"
+      type="text"
+      class="w-full"
+    >
+  </div>
+
+  <div class="flex-container">
+    <div class="field">
+      <label for="nombres">Nombres</label>
+      <input
+        [(ngModel)]="candidate.nombres"
+        id="nombres"
+        pInputText
+        placeholder="Jane"
+        type="text"
+        class="w-full"
+      >
+    </div>
+    <div class="field">
+      <label for="lastname">Apellidos</label>
+      <input
+        [(ngModel)]="candidate.apellidos"
+        id="lastname"
+        pInputText
+        placeholder="Doe"
+        type="text"
+        class="w-full"
+      >
+    </div>
+  </div>
+  <div class="field">
+    <label for="email">Correo</label>
+    <input
+      [(ngModel)]="candidate.correo"
+      id="email"
+      pInputText
+      placeholder="Jane@amigoscode.com"
+      type="email"
+      class="w-full"
+    >
+  </div>
+  <div class="flex-container">
+  <div class="field">
+    <label for="firstname">Número resolución</label>
+    <input
+      [(ngModel)]="candidate.numeroResolucion"
+      id="firstname"
+      pInputText
+      placeholder="00"
+      type="number"
+      class="w-full"
+    >
+  </div>
+  <div class="field">
+    <label for="telefono">Telefono</label>
+    <input
+      [(ngModel)]="candidate.telefono"
+      id="telefono"
+      pInputText
+      placeholder="0000000000"
+      type="number"
+      class="w-full"
+    >
+  </div>
+  </div>
+  <div class="field" *ngIf="operation === 'create' || operation === 'update' ">
+    <label for="partido">Partido</label>
+    <select
+      [(ngModel)]="candidate.partido"
+      class="p-dropdown w-full custom-select"
+      id="partido"
+    >
+      <option value="" selected>Seleccione</option>
+      <option value="LIBERAL">Liberal</option>
+      <option value="CONSERVADOR">Conservador</option>
+    </select>
+  </div>
+  <button
+    [disabled]="!isCandidateValid"
+    (click)="onSubmit()"
+    pButton
+    label="Regitrar"
+    class="w-full"
+  ></button>
+  <button
+    (click)="onCancel()"
+    pButton
+    label="Cancelar"
+    class="w-full p-button-outlined p-button-danger mt-2"
+  ></button>
+</div>
