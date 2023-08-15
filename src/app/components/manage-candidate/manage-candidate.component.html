@@ -36,7 +36,7 @@
       >
     </div>
   </div>
-  <div class="field">
+<!--   <div class="field">
     <label for="email">Correo</label>
     <input
       [(ngModel)]="candidate.correo"
@@ -46,9 +46,9 @@
       type="email"
       class="w-full"
     >
-  </div>
+  </div> -->
   <div class="flex-container">
-  <div class="field">
+<!--   <div class="field">
     <label for="firstname">Número resolución</label>
     <input
       [(ngModel)]="candidate.numeroResolucion"
@@ -58,8 +58,8 @@
       type="number"
       class="w-full"
     >
-  </div>
-  <div class="field">
+  </div> -->
+<!--   <div class="field">
     <label for="telefono">Telefono</label>
     <input
       [(ngModel)]="candidate.telefono"
@@ -69,7 +69,7 @@
       type="number"
       class="w-full"
     >
-  </div>
+  </div> -->
   </div>
   <div class="field" *ngIf="operation === 'create' || operation === 'update' ">
     <label for="partido">Partido</label>
@@ -78,7 +78,7 @@
       class="p-dropdown w-full custom-select"
       id="partido"
     >
-      <option value="" selected>Seleccione</option>
+      <option value="" selected="Seleccione">Seleccione</option>
       <option value="LIBERAL">Liberal</option>
       <option value="CONSERVADOR">Conservador</option>
     </select>

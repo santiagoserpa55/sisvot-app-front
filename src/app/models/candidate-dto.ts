@@ -3,9 +3,8 @@ export interface CandidateDTO {
   nombres?: string;
   apellidos?: string;
   correo?: string;
-  gender?: 'MALE' | 'FEMALE';
-  numeroResolucion?: number;
-  telefono?: string;
-  roles?: string[],
+  roles?: string[];
+  usuario?: CandidateDTO;
+  eslogan?: string;
   partido?: string,
 }

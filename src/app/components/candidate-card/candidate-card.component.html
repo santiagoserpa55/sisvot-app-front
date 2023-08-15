@@ -18,9 +18,8 @@
     <p-badge
       [value]="'' + (candidateIndex + 1)"
     ></p-badge>
-    <h2>{{candidate.nombres}} {{candidate.apellidos}}</h2>
-    <p class="text-gray-600"><p><strong>Número resolución: </strong> {{candidate.numeroResolucion}}</p>
-    <p class="text-gray-600" *ngIf="candidate">{{ candidate.correo}}</p>
+    <h2>{{candidate.usuario?.nombres}} {{candidate.usuario?.apellidos}}</h2>
+    <p class="text-gray-600" *ngIf="candidate">{{ candidate.eslogan}}</p>
     <p class="text-gray-600"><strong>Partido </strong>{{candidate.partido}}</p>
   </ng-template>
   <ng-template pTemplate="footer">
