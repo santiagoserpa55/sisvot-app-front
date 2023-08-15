@@ -1,5 +1,5 @@
 export interface CandidateDTO {
-  id?: number;
+  _id?: number;
   nombres?: string;
   apellidos?: string;
   correo?: string;

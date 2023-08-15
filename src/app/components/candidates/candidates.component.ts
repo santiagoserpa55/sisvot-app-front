@@ -75,15 +75,15 @@ export class CandidateComponent implements OnInit {
   deleteCandidate(candidato: CandidateDTO) {
     this.confirmationService.confirm({
       header: 'Eliminar candidato',
-      message: `Esta seguro que desea eliminar ${candidato.id}? esta acción no se puede deshacer`,
+      message: `Esta seguro que desea eliminar ${candidato._id}? esta acción no se puede deshacer`,
       accept: () => {
-        this.candidateService.deleteCandidate(candidato.id).subscribe({
+        this.candidateService.deleteCandidate(candidato._id).subscribe({
           next: () => {
             this.findAllCandidates();
             this.messageService.add({
               severity: 'success',
               summary: 'Candidato eliminado',
-              detail: `Candidato ${candidato.id} eliminado exitosamente`,
+              detail: `Candidato ${candidato._id} eliminado exitosamente`,
             });
           },
         });

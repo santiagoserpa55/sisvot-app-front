@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CandidateComponent } from './components/candidates/candidates.component';
 import { AccessGuardService } from './services/guard/access-guard.service';
+import { VotarComponent } from './components/votar/votar.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'candidates',
     component: CandidateComponent,
+    canActivate: [AccessGuardService]
+  },
+  {
+    path: 'votar',
+    component: VotarComponent,
     canActivate: [AccessGuardService]
   }
 ];

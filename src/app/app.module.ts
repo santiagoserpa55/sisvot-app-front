@@ -28,6 +28,7 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
+import { VotarComponent } from './components/votar/votar.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { DialogModule } from 'primeng/dialog';
     LoginComponent,
     CandidateCardComponent,
     RegisterComponent,
+    VotarComponent,
   ],
   imports: [
     BrowserModule,
