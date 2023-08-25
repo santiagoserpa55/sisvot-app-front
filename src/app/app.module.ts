@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CandidateComponent } from './components/candidates/candidates.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CandidateCardComponent } from './components/candidate-card/candidate-card.component';
@@ -12,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { ManageCandidateComponent } from './components/manage-candidate/manage-candidate.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
-import { RegisterComponent } from './components/register/register.component';
 import { HttpInterceptorService } from './services/interceptor/http-interceptor.service';
 import {InputTextModule} from 'primeng/inputtext';
 import { AvatarModule } from 'primeng/avatar';
@@ -28,13 +26,14 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
-import { VotarComponent } from './components/votar/votar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CandidateComponent,
+    DashboardComponent,
     MenuBarComponent,
     MenuItemComponent,
     HeaderBarComponent,
@@ -42,7 +41,6 @@ import { VotarComponent } from './components/votar/votar.component';
     LoginComponent,
     CandidateCardComponent,
     RegisterComponent,
-    VotarComponent,
   ],
   imports: [
     BrowserModule,

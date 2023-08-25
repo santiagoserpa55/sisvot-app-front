@@ -17,23 +17,25 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  login() {
+  login() {    
     this.errorMsg = '';
-    this.authenticationService.login(this.authenticationRequest)
+    this.authenticationService.login(this.authenticationRequest)    
     .subscribe({
       next: (authenticationResponse) => {
         localStorage.setItem('user', JSON.stringify(authenticationResponse));
-        this.router.navigate(['candidates']);
+        this.router.navigate(['dashboard']);
       },
       error: (err) => {
-        if (err.error.statusCode === 401) {
-          this.errorMsg = 'Login and / or password is incorrect';
+        console.log(err);
+        
+        if (err.error.msg === "Bad username or password") {
+          this.errorMsg = 'Correo o contraseña incorrectos';
         }
       }
     });
   }
 
   register() {
-    this.router.navigate(['register']);
+    this.router.navigate(['registro']);
   }
 }

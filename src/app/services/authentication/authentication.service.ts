@@ -16,7 +16,7 @@ export class AuthenticationService {
     private http: HttpClient
   ) { }
 
-  login(authRequest: AuthenticationRequest): Observable<AuthenticationResponse> {
+  login(authRequest: AuthenticationRequest): Observable<AuthenticationResponse> {    
     return this.http.post<AuthenticationResponse>(this.authUrl, authRequest);
   }
 }

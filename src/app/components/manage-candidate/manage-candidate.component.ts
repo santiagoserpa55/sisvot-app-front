@@ -22,7 +22,6 @@ export class ManageCandidateComponent {
   get isCandidateValid(): boolean {
     return this.hasLength(this.candidate.nombres) &&
       this.hasLength(this.candidate.correo) &&
-      this.candidate.numeroResolucion !== undefined && this.candidate.numeroResolucion > 0 &&
       (
         this.operation === 'update' ||
         this.hasLength(this.candidate.nombres) &&

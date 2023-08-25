@@ -5,11 +5,11 @@ import { CandidateRegistrationRequest } from 'src/app/models/candidate-registrat
 import { CandidateService } from 'src/app/services/candidate/candidate.service';
 
 @Component({
-  selector: 'app-candidate',
-  templateUrl: './candidates.component.html',
-  styleUrls: ['./candidates.component.scss'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class CandidateComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   display = false;
   operation: 'create' | 'update' = 'create';
   candidates: Array<CandidateDTO> = [];
