@@ -11,88 +11,84 @@
         <h1>Registrese</h1>
       </div>
       <p-message
-        *ngIf="errorMsg"
+        *ngIf="errorMessage"
         severity="error"
-        [text]="errorMsg"
+        [text]="errorMessage"
         styleClass="mb-2 w-full"
       ></p-message>
-      <div class="field">
-        <label for="cedula">Cedula</label>
-        <input
-          [(ngModel)]="usuario.cedula"
-          id="cedula"
-          pInputText
-          placeholder="100000000"
-          type="text"
-          class="w-full"
-        >
-      </div>
-      <div class="field">
-        <label for="nombres">Nombres</label>
-        <input
-          [(ngModel)]="usuario.nombres"
-          id="nombres"
-          pInputText
-          placeholder="John"
-          type="text"
-          class="w-full"
-        >
-      </div>
-      <div class="field">
-        <label for="apellidos">Apellidos</label>
-        <input
-          [(ngModel)]="usuario.apellidos"
-          id="apellidos"
-          pInputText
-          placeholder="Doe"
-          type="text"
-          class="w-full"
-        >
-      </div>
-      <div class="field">
-        <label for="correo">Correo</label>
-        <input
-          [(ngModel)]="usuario.correo"
-          id="correo"
-          pInputText
-          placeholder="doe@email.com"
-          type="email "
-          class="w-full"
-        >
-      </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input
-          [(ngModel)]="usuario.contrasena"
-          id="password"
-          pInputText
-          placeholder="Password"
-          type="password"
-          class="w-full"
-        >
-      </div>
 
-      <button
-        (click)="createAccount()"
-        pButton
-        label="Create an account"
-        class="w-full"
-      ></button>
-      <button
-        (click)="login()"
-        pButton
-        label="Have an account? Login now."
-        class="w-full p-button-link text-left pl-0"
-      ></button>
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <div class="field">
+            <label for="username">Usuario</label>
+            <input
+              type="text"
+              [(ngModel)]="form.username"
+              name="username"
+              pInputText
+              placeholder="Doe"
+              class="form-control"
+              class="w-full"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <label for="email">Correo</label>
+            <input
+              pInputText
+              type="email "
+              [(ngModel)]="form.email"
+              name="email"
+              class="form-control"
+              placeholder="doe@email.com"
+              class="w-full"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input
+              pInputText
+              type="password"
+              class="form-control"
+              class="w-full"
+              [(ngModel)]="form.password"
+              name="password"
+              placeholder="Contraseña"
+            />
+          </div>
+        </div>
+
+        <button pButton label="Crear cuenta" class="w-full"></button>
+        <button
+          pButton
+          label="Ya tienes una cuenta?, Iniciar Sesión."
+          class="w-full p-button-link text-left pl-0"
+        ></button>
+      </form>
     </div>
   </div>
-  <div class="col-6 flex flex-column justify-content-center align-items-center right-container">
+  <div
+    class="col-6 flex flex-column justify-content-center align-items-center right-container"
+  >
     <h1>
-      <a href="https://stone-opinion-2b0.notion.site/Sistema-votaciones-c0ced54e5d134c4699f026a878f8ce0e?pvs=4" target="_blank">Sisvot-app</a>
+      <a
+        href="https://stone-opinion-2b0.notion.site/Sistema-votaciones-c0ced54e5d134c4699f026a878f8ce0e?pvs=4"
+        target="_blank"
+        >Sisvot-app</a
+      >
     </h1>
     <img
       class="background p-6 pt-0"
       src="https://images.unsplash.com/photo-1616442830389-0ad5a8489dfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHZvdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-    >
+    />
   </div>
 </div>

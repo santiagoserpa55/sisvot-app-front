@@ -17,8 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AccessGuardService]
+    component: DashboardComponent
   },
   {
     path: 'registro',

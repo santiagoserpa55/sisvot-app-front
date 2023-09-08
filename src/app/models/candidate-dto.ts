@@ -2,9 +2,7 @@ export interface CandidateDTO {
   _id?: number;
   nombres?: string;
   apellidos?: string;
+  cedula?: string;
   correo?: string;
-  roles?: string[];
-  usuario?: CandidateDTO;
-  eslogan?: string;
   partido?: string,
 }

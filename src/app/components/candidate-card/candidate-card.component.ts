@@ -34,6 +34,11 @@ export class CandidateCardComponent {
     this.update.emit(this.candidate)
   }
 
+  ngOnInit(): void {
+    
+
+  }
+
   onVotar() {
     this.votar.emit(this.candidate)
     let idCandidate = this.candidate._id
@@ -62,7 +67,7 @@ export class CandidateCardComponent {
 
     // Realizar la solicitud POST al backend
     axios
-      .post('http://localhost:8082/votar', data)
+      .post('http://localhost:8080/api/auth/votar', data)
       .then((response: { data: any }) => {
         console.log('Votación exitosa:', response.data)
       })

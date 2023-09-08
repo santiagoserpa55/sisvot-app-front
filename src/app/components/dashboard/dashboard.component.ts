@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     this.candidateService.findAll().subscribe({
       next: (data) => {
         this.candidates = data;
-        //console.log(data);
+        console.log(data);
       },
     });
   }
