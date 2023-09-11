@@ -22,21 +22,20 @@
       <app-header-bar></app-header-bar>
     </div>
     <div class="main-container p-3">
-      <button
+<!--       <button
         pButton
         icon="pi pi-plus"
         label="Crear candidato"
         class="p-button-success"
         (click)="createCandidate()"
       >
-      </button>
+      </button> -->
       <div class="flex justify-content-center align-items-center flex-wrap gap-5 mt-4">
         <app-candidate-card
           *ngFor="let candidate of candidates; let index = index"
           [candidate]="candidate"
           [candidateIndex]="index"
-          (delete)="deleteCandidate($event)"
-          (update)="updateCandidate($event)"
+
         ></app-candidate-card>
         
       </div>

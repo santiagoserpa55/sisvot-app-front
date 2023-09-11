@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable } from 'rxjs'
 
-const AUTH_API = 'http://localhost:8080/api/auth/';
+const AUTH_API = 'http://localhost:8080/api/auth/'
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+}
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,7 @@ export class AuthService {
         password,
       },
       httpOptions
-    );
+    )
   }
 
   register(username: string, email: string, password: string): Observable<any> {
@@ -34,10 +34,21 @@ export class AuthService {
         password,
       },
       httpOptions
-    );
+    )
+  }
+
+  votar(userId: string, candidateId?: string): Observable<any> {    
+    return this.http.post(
+      AUTH_API + 'votar',
+      {
+        userId,
+        candidateId,
+      },
+      httpOptions
+    )
   }
 
   logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', { }, httpOptions);
+    return this.http.post(AUTH_API + 'signout', {}, httpOptions)
   }
 }
